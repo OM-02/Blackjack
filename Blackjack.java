@@ -1,10 +1,10 @@
 import java.util.*;
 
 public class Blackjack {
-    private String[] cards = new String[]{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     private ArrayList<String> playerCards = new ArrayList<String>();
     private ArrayList<Integer> playerCardVals = new ArrayList<Integer>();
     private int playerTotal = 0;
+    private int deckLocation = 0;
 
     public Blackjack() {
         this.getCard();
@@ -13,25 +13,38 @@ public class Blackjack {
         this.checkAces();
     }
 
+    // Deck initializer block
+    private static ArrayList<Cards> deck = new ArrayList<Cards>();
+    static {
+        int index = 0;
+        for (int suit = 0; suit <= 3; suit++) {
+            for (int rank = 1; rank <= 13; rank++) {
+                deck.add(new Cards(rank, suit));
+                index++;
+            }
+        }
+        Collections.shuffle(deck);  
+    }
+
+
     public void getHand() {
         System.out.println("Your hand is now: " + playerCards);
     }
 
     public void getCard() {
-        int x = getRandom();
-        playerCards.add(cards[x]);
-        if (x >= 9) {
+        playerCards.add(deck.get(deckLocation).cardName());
+        if (deck.get(deckLocation).getRank() >= 10) {
             playerTotal += 10;
             playerCardVals.add(10);
-        } else if (x == 0) {
+        } else if (deck.get(deckLocation).getRank() == 1) {
             playerTotal += 11;
             playerCardVals.add(11);
         } else {
-            playerTotal += x+1;
-            playerCardVals.add(x+1);
+            playerTotal += deck.get(deckLocation).getRank();
+            playerCardVals.add(deck.get(deckLocation).getRank());
         }
-
-        System.out.println("You were dealt: " + cards[x]);
+        deckLocation++;
+        System.out.println("You were dealt: " + deck.get(deckLocation).cardName());
     }
 
     public void checkAces() {
