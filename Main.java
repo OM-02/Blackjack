@@ -29,6 +29,7 @@ class Main {
                 running = false;
                 break;
             }
+            keyboard.close();
         }
 
     }
