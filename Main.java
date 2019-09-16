@@ -5,6 +5,11 @@ public class Main {
     public static void main(String[] args) {
         boolean running = true;
         Blackjack b = new Blackjack();
+        int a = b.getTotal();
+        if (a == 21) {
+            System.out.println("Blackjack!");
+            running = false;
+        }
 
         while (running) {
             Scanner keyboard = new Scanner(System.in);
