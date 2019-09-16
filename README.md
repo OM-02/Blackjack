@@ -1,9 +1,13 @@
 # Blackjack Game
 This is a simple blackjack game created for a school project.
 
-Currently, it cannot keep track of suits and cannot keep track of number of cards played, it can only give you a random card value and keep track of it. It is currently possible to play a game with 10 aces. Aces are assumed to be 11 and automatically changed to a 1 if a hit takes you over 21.
+The game has been updated to implement a deck system which creates a card object with a suit and a rank. It then creates an ArrayList of cards and shuffles it with Collections.shuffle. Cards will not be duplicated and the deck system works fully.
 
-Planned Features:
+Aces are automatically dealt with by being assumed to be 11 until them being 11 would cause a bust, at which point they are changed to a 1. This feature does work with multiple aces. A hand with two aces and a four will be worth 16.
+
+## Current Features:
+- Automatic ace handling
+- Shuffled deck system
+
+## Planned Features:
 - Computer players
-- Suit tracking
-- Adding a real deck system
