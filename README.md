@@ -5,3 +5,5 @@ Currently, it cannot keep track of suits and cannot keep track of number of card
 
 Planned Features:
 - Computer players
+- Suit tracking
+- Adding a real deck system
