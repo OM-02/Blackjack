@@ -43,8 +43,8 @@ public class Blackjack {
             playerTotal += deck.get(deckLocation).getRank();
             playerCardVals.add(deck.get(deckLocation).getRank());
         }
-        deckLocation++;
         System.out.println("You were dealt: " + deck.get(deckLocation).cardName());
+        deckLocation++;
     }
 
     public void checkAces() {
