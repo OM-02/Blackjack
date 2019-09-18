@@ -10,9 +10,9 @@ public class Main {
             System.out.println("Blackjack!");
             running = false;
         }
+        Scanner keyboard = new Scanner(System.in);
 
         while (running) {
-            Scanner keyboard = new Scanner(System.in);
             System.out.println("Hit or stay?");
             String choice = keyboard.nextLine();
 
@@ -35,8 +35,7 @@ public class Main {
                 running = false;
                 break;
             }
-            keyboard.close();
         }
-
+        keyboard.close();
     }
 }
