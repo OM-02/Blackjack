@@ -27,20 +27,20 @@ public class Blackjack {
 
 
     public void getHand() {
-        System.out.println("Your hand is now: " + playerCards);
+        System.out.println("Your hand is now: " + this.playerCards);
     }
 
     public void getCard() {
-        playerCards.add(deck.get(deckLocation).cardName());
+        this.playerCards.add(deck.get(deckLocation).cardName());
         if (deck.get(deckLocation).getRank() >= 10) {
-            playerTotal += 10;
-            playerCardVals.add(10);
+            this.playerTotal += 10;
+            this.playerCardVals.add(10);
         } else if (deck.get(deckLocation).getRank() == 1) {
-            playerTotal += 11;
-            playerCardVals.add(11);
+            this.playerTotal += 11;
+            this.playerCardVals.add(11);
         } else {
-            playerTotal += deck.get(deckLocation).getRank();
-            playerCardVals.add(deck.get(deckLocation).getRank());
+            this.playerTotal += deck.get(deckLocation).getRank();
+            this.playerCardVals.add(deck.get(deckLocation).getRank());
         }
         System.out.println("You were dealt: " + deck.get(deckLocation).cardName());
         deckLocation++;
@@ -50,19 +50,19 @@ public class Blackjack {
         int i = 0;
         while (playerTotal > 21 && i < playerCardVals.size()) {
             if (playerCardVals.get(i) == 11) {
-                playerCardVals.set(i, 1);
-                playerTotal -= 10;
+                this.playerCardVals.set(i, 1);
+                this.playerTotal -= 10;
             }
             i++;
         }
     }
 
     public int getTotal() {
-        return playerTotal;
+        return this.playerTotal;
     }
 
     public void stay() {
-        System.out.println("Your total was: " + playerTotal);
+        System.out.println("Your total was: " + this.playerTotal);
     }
 
     public int getRandom() {
