@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Blackjack {
     private ArrayList<String> playerCards = new ArrayList<String>();
@@ -16,11 +17,9 @@ public class Blackjack {
     // Deck initializer block
     private static ArrayList<Cards> deck = new ArrayList<Cards>();
     static {
-        int index = 0;
         for (int suit = 0; suit <= 3; suit++) {
             for (int rank = 1; rank <= 13; rank++) {
                 deck.add(new Cards(rank, suit));
-                index++;
             }
         }
         Collections.shuffle(deck);  
