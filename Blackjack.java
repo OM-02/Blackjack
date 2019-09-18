@@ -32,15 +32,16 @@ public class Blackjack {
 
     public void getCard() {
         this.playerCards.add(deck.get(deckLocation).cardName());
-        if (deck.get(deckLocation).getRank() >= 10) {
+        int rankGet = deck.get(deckLocation).getRank();
+        if (rankGet >= 10) {
             this.playerTotal += 10;
             this.playerCardVals.add(10);
-        } else if (deck.get(deckLocation).getRank() == 1) {
+        } else if (rankGet == 1) {
             this.playerTotal += 11;
             this.playerCardVals.add(11);
         } else {
-            this.playerTotal += deck.get(deckLocation).getRank();
-            this.playerCardVals.add(deck.get(deckLocation).getRank());
+            this.playerTotal += rankGet;
+            this.playerCardVals.add(rankGet);
         }
         System.out.println("You were dealt: " + deck.get(deckLocation).cardName());
         deckLocation++;
