@@ -22,7 +22,7 @@ public class Blackjack {
                 deck.add(new Cards(rank, suit));
             }
         }
-        Collections.shuffle(deck);  
+        Collections.shuffle(deck);
     }
 
 
