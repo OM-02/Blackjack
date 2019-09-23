@@ -39,9 +39,13 @@ public class Main {
         Computer c = new Computer();
 
         if (b.getTotal() <= 21 && b.getTotal() >= c.computerTotal()) {
+            System.out.println("Dealer had: " + c.computerTotal());
             System.out.println("You win!");
         } else if (b.getTotal() <= 21 && c.computerTotal() > 21) {
+            System.out.println("Dealer had: " + c.computerTotal());
             System.out.println("You win!");
+        } else if (b.getTotal() > 21) {
+
         } else {
             System.out.println("Sorry, you lost!");
         }

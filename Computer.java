@@ -4,7 +4,6 @@ public class Computer {
         while (c.getTotal() < 16) {
             c.getCard();
         }
-        System.out.println("Computer had: " + c.getTotal());
     }
 
     public int computerTotal() {
