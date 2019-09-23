@@ -45,8 +45,6 @@ public class Player {
                 break;
             }
         }
-        // Closes the scanner so that there isn't a resource leak
-        keyboard.close();
     }
 
     // Getter method for the player's total card value
