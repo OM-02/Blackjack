@@ -2,12 +2,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Blackjack {
+
+    // ArrayLists for keeping track of the player's hand and hand value
     private ArrayList<String> playerCards = new ArrayList<String>();
     private ArrayList<Integer> playerCardVals = new ArrayList<Integer>();
+
+    // Initializes the player's total hand value
     private int playerTotal = 0;
+
+    // Static integer for keeping track of which card in the deck is next to be dealt
     private static int deckLocation = 0;
+
+    // Boolean for whether it is a player or the dealer being referred to
     private boolean isPlayer;
 
+    // Constructor method that deals two cards, as well as outputs the player's hand if the player is not the dealer
     public Blackjack(boolean isPlayer) {
         this.isPlayer = isPlayer;
         this.getCard();
@@ -29,11 +38,12 @@ public class Blackjack {
         Collections.shuffle(deck);
     }
 
-
+    // Getter method for the cards in the player's hand
     public void getHand() {
         System.out.println("Your hand is now: " + this.playerCards + "\n---");
     }
 
+    // Method for dealing a card
     public void getCard() {
         this.playerCards.add(deck.get(deckLocation).cardName());
         int rankGet = deck.get(deckLocation).getRank();
@@ -54,6 +64,7 @@ public class Blackjack {
         deckLocation++;
     }
 
+    // Method that deals with whether the aces need to be a 1 or an 11
     public void checkAces() {
         int i = 0;
         while (playerTotal > 21 && i < playerCardVals.size()) {
@@ -65,18 +76,22 @@ public class Blackjack {
         }
     }
 
+    // Returns the player's total card values
     public int getTotal() {
         return this.playerTotal;
     }
 
+    // Outputs the player's total hand value when the player stays
     public void stay() {
         System.out.println("Your total was: " + this.playerTotal);
     }
 
+    // Method for generating a random number
     public int getRandom() {
         return (int) ((Math.random()*14) - 1);
     }
 
+    // Method for getting a card at position i in a player's hand
     public String getTopCard(int i) {
         return this.playerCards.get(i);
     }
