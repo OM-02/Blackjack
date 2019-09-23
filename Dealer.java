@@ -3,7 +3,7 @@ public class Dealer {
     static Blackjack c = new Blackjack(false);
 
     // Static initializer that causes the dealer to draw until it has a total of 16 or more
-    static {
+    public void getDealerCard() {
         while (c.getTotal() <= 16) {
             c.getCard();
         }

@@ -10,6 +10,9 @@ public class Main {
         // Creates a player object
         Player b = new Player();
 
+        // Deals the dealer's cards after the player's cards have been dealt
+        c.getDealerCard();
+
         // Integers for player and dealer card total values, simplifies win checking
         int pTotal = b.playerTotal(), dTotal = c.dealerTotal();
 
