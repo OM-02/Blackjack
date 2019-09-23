@@ -11,5 +11,6 @@ Aces are automatically dealt with by being assumed to be 11 until them being 11 
 - Dealer plays and can win
 
 ## Planned Features:
-- Move the player's hand and actions to a separate class
+- Move the player's hand and actions to a separate class (finished)
+    - Possibly add the option for multiple people to play?
 - Add a money system
