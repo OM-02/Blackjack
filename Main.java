@@ -7,7 +7,7 @@ public class Main {
 
         System.out.println("---\nWelcome to blackjack! This project\nis a slow and steady work in progress\nthat will hopefully continue to\nimprove over time.\n---");
 
-        Computer c = new Computer();
+        Dealer c = new Dealer();
         System.out.println("Dealer's card: " + c.getDealerTopCard() + "\n");
 
         Blackjack b = new Blackjack(true);
@@ -43,19 +43,19 @@ public class Main {
             }
         }
 
-        if (b.getTotal() <= 21 && b.getTotal() >= c.computerTotal()) {
-            System.out.println("Dealer had: " + c.computerTotal());
+        if (b.getTotal() <= 21 && b.getTotal() >= c.dealerTotal()) {
+            System.out.println("Dealer had: " + c.dealerTotal());
             System.out.println("You win!");
-        } else if (b.getTotal() <= 21 && c.computerTotal() > 21) {
-            System.out.println("Dealer had: " + c.computerTotal());
+        } else if (b.getTotal() <= 21 && c.dealerTotal() > 21) {
+            System.out.println("Dealer had: " + c.dealerTotal());
             System.out.println("You win!");
         } else if (b.getTotal() > 21) {
 
-        } else if (b.getTotal() <= 21 && b.getTotal() == c.computerTotal()) {
-            System.out.println("Dealer had: " + c.computerTotal());
+        } else if (b.getTotal() <= 21 && b.getTotal() == c.dealerTotal()) {
+            System.out.println("Dealer had: " + c.dealerTotal());
             System.out.println("It's a draw!");
         } else {
-            System.out.println("Dealer had: " + c.computerTotal());
+            System.out.println("Dealer had: " + c.dealerTotal());
             System.out.println("You lost!");
         }
 

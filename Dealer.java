@@ -1,4 +1,4 @@
-public class Computer {
+public class Dealer {
     static Blackjack c = new Blackjack(false);
     static {
         while (c.getTotal() < 16) {
@@ -6,7 +6,7 @@ public class Computer {
         }
     }
 
-    public int computerTotal() {
+    public int dealerTotal() {
         return c.getTotal();
     }
 
