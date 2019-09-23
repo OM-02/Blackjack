@@ -43,7 +43,7 @@ public class Main {
             }
         }
 
-        if (b.getTotal() <= 21 && b.getTotal() >= c.dealerTotal()) {
+        if (b.getTotal() <= 21 && b.getTotal() > c.dealerTotal()) {
             System.out.println("Dealer had: " + c.dealerTotal());
             System.out.println("You win!");
         } else if (b.getTotal() <= 21 && c.dealerTotal() > 21) {
