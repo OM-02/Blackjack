@@ -14,3 +14,4 @@ Aces are automatically dealt with by being assumed to be 11 until them being 11 
 - Move the player's hand and actions to a separate class (finished)
     - Possibly add the option for multiple people to play?
 - Add a money system
+- Add a splitting feature
