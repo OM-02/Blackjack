@@ -9,4 +9,8 @@ public class Computer {
     public int computerTotal() {
         return c.getTotal();
     }
+
+    public String getDealerTopCard() {
+        return c.getTopCard(1);
+    }
 }

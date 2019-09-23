@@ -31,7 +31,7 @@ public class Blackjack {
 
 
     public void getHand() {
-        System.out.println("Your hand is now: " + this.playerCards);
+        System.out.println("Your hand is now: " + this.playerCards + "\n---");
     }
 
     public void getCard() {
@@ -75,5 +75,9 @@ public class Blackjack {
 
     public int getRandom() {
         return (int) ((Math.random()*14) - 1);
+    }
+
+    public String getTopCard(int i) {
+        return this.playerCards.get(i);
     }
 }
