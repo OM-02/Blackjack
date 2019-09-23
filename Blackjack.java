@@ -5,12 +5,16 @@ public class Blackjack {
     private ArrayList<String> playerCards = new ArrayList<String>();
     private ArrayList<Integer> playerCardVals = new ArrayList<Integer>();
     private int playerTotal = 0;
-    private int deckLocation = 0;
+    private static int deckLocation = 0;
+    private boolean isPlayer;
 
-    public Blackjack() {
+    public Blackjack(boolean isPlayer) {
+        this.isPlayer = isPlayer;
         this.getCard();
         this.getCard();
-        this.getHand();
+        if (this.isPlayer) {
+            this.getHand();
+        }
         this.checkAces();
     }
 
@@ -43,7 +47,10 @@ public class Blackjack {
             this.playerTotal += rankGet;
             this.playerCardVals.add(rankGet);
         }
-        System.out.println("You were dealt: " + deck.get(deckLocation).cardName());
+
+        if (this.isPlayer) {
+            System.out.println("You were dealt: " + deck.get(deckLocation).cardName());
+        }
         deckLocation++;
     }
 

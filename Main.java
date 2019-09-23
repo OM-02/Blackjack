@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         boolean running = true;
-        Blackjack b = new Blackjack();
+        Blackjack b = new Blackjack(true);
         int a = b.getTotal();
         if (a == 21) {
             System.out.println("Blackjack!");
@@ -36,6 +36,16 @@ public class Main {
                 break;
             }
         }
+        Computer c = new Computer();
+
+        if (b.getTotal() <= 21 && b.getTotal() >= c.computerTotal()) {
+            System.out.println("You win!");
+        } else if (b.getTotal() <= 21 && c.computerTotal() > 21) {
+            System.out.println("You win!");
+        } else {
+            System.out.println("Sorry, you lost!");
+        }
+
         keyboard.close();
     }
 }
